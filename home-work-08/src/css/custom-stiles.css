@@ -1,0 +1,17 @@
+table {
+    border-collapse: collapse;
+    padding: 3px;
+}
+
+th, td {
+    border: 3px rebeccapurple solid;
+    padding: 5px 10px;
+}
+
+thead {
+    background-color: #eee;
+}
+
+tfoot {
+    background-color: yellow;
+}
