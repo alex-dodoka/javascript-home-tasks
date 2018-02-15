@@ -1,4 +1,6 @@
+let multiplicationTableHolder = document.getElementById('multiplication-table');
 
+multiplicationTableHolder.innerHTML = render(multiplicationTable(10));
 
 function multiplicationTable(size) {
     let table = [];
@@ -13,4 +15,12 @@ function multiplicationTable(size) {
     return table;
 }
 
-
+function render(array) {
+    let rowsQty = array.length;
+    let result = [];
+    for (let i = 0; i < rowsQty; i++) {
+        let row = ['<tr><td>', array[i].join('</td><td>'), '</td></tr>'].join('');
+        result.push(row);
+    }
+    return result.join('');
+}
