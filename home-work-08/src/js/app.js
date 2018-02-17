@@ -6,14 +6,15 @@ function multiplicationTable(size) {
     let table = [];
     for (let i = 2; i <= size; i++) {
         let multiplier = i;
-
+        table[i] = [];
         for (let j = 1; j <= 10; j++) {
             let res = multiplier * j;
-            table.push(res);
+            table[i].push(res);
         }
     }
     return table;
 }
+
 
 function render(array) {
     let rowsQty = array.length;
