@@ -10,9 +10,11 @@ function addToCart() {
         printInHtml(`${rowTemplate} ${strOfItems} товар`);
     } else if (strOfItems >= 2 || strOfItems <= 4) {
         printInHtml(`${rowTemplate} ${strOfItems} товарa`);
-    } else {
+    }else {
         printInHtml(`${rowTemplate} ${strOfItems} товаров`);
     }
+
+
     clearInput();
 }
 
