@@ -1,0 +1,21 @@
+{
+  "name": "javascript-home-tasks",
+  "homepage": "https://github.com/alex-dodoka/javascript-home-tasks",
+  "authors": [
+    "alex-dodoka <neksus.92@mail.ru>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "*",
+    "bootstrap": "*"
+  }
+}
