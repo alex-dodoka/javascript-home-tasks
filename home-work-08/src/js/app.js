@@ -4,14 +4,10 @@ multiplicationTableHolder.innerHTML = render(multiplicationTable(10));
 
 function multiplicationTable(size) {
     let table = [];
-
     for (let i = 1; i <= size; i++) {
-        let multiplier = i;
         table[i] = [];
         for (let j = 1; j <= 10; j++) {
-            let res = multiplier * j;
-            table[i].push(res);
-
+            table[i].push(i * j);
         }
     }
     return table;
