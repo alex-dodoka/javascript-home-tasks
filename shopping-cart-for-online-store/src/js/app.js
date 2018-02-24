@@ -1,20 +1,29 @@
-let rowTemplate = "В корзине";
+const rowTemplate = `В корзине `;
+const cases = [`товар`, `товара`, `товаров`];
+
 
 function addToCart() {
     let strOfItems = Math.floor($('#number-of-goods').val());
+    strOfItems %= 100;
 
-    if (typeof strOfItems !== `number`) {
-        printInHtml(`Введите число!`);
-    }
-    if (strOfItems === 1) {
-        printInHtml(`${rowTemplate} ${strOfItems} товар`);
-    } else if (strOfItems >= 2 && strOfItems <= 4) {
-        printInHtml(`${rowTemplate} ${strOfItems} товарa`);
-    } else {
-        printInHtml(`${rowTemplate} ${strOfItems} товаров`);
+    if (strOfItems > 19) {
+        strOfItems %= 10;
     }
 
+    switch (strOfItems) {
+        case 1:
+            printInHtml(`${rowTemplate} ${strOfItems} ${cases[0]}`);
+            break;
 
+        case 2:
+        case 3:
+        case 4:
+            printInHtml(`${rowTemplate} ${strOfItems} ${cases[1]}`);
+            break;
+
+        default:
+            printInHtml(`${rowTemplate} ${strOfItems} ${cases[2]}`);
+    }
     clearInput();
 }
 
