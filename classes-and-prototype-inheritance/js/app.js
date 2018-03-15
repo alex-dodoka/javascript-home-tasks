@@ -11,6 +11,11 @@ class Transport {
         this.cost = cost;
         this.fuelConsumption = fuelConsumption;
     }
+
+    start() {
+        console.log(`${this.model} was started. Wroooommmmm!`);
+    }
+
 }
 
 function getRandomValue(arrOfValue) {
