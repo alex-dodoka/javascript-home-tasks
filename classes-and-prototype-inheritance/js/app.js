@@ -11,20 +11,16 @@ class Transport {
         this.cost = cost;
         this.fuelConsumption = fuelConsumption;
     }
+}
+
+function getRandomValue(arrOfValue) {
+    let index = Math.floor(Math.random() * arrOfValue.length);
+    let value = arrOfValue[index];
+    return value;
+}
+
+class PassengerCar extends Transport {
 
 }
 
-
-function getRandomName(arrOfNames) {
-    let indexName = Math.floor(Math.random() * arrOfNames.length);
-    return arrOfNames[indexName];
-}
-
-function getRandomPrice(arrOfPrice) {
-    let indexPrice = Math.floor(Math.random() * arrOfPrice.length);
-    return arrOfPrice[indexPrice];
-}
-
-let car = new Transport(getRandomName(arrOfModelNames), getRandomPrice(arrOfPrice), 100);
-let car2 = new Transport(getRandomName(arrOfModelNames), getRandomPrice(arrOfPrice), 100);
-let car3 = new Transport(getRandomName(arrOfModelNames), getRandomPrice(arrOfPrice), 100);
+let car = new PassengerCar(getRandomValue(arrOfModelNames), getRandomValue(arrOfPrice), 100);
