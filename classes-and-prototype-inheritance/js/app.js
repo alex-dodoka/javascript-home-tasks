@@ -18,6 +18,17 @@ class Transport {
 
 }
 
+class Train extends Transport {
+
+    info() {
+        console.log(this.model);
+    }
+}
+
+class MegaTrain extends Train {
+
+}
+
 function getRandomValue(arrOfValue) {
     let index = Math.floor(Math.random() * arrOfValue.length);
     let value = arrOfValue[index];
@@ -29,3 +40,9 @@ class PassengerCar extends Transport {
 }
 
 let car = new PassengerCar(getRandomValue(arrOfModelNames), getRandomValue(arrOfPrice), 100);
+let train = new Train("poezd", 2000, 336);
+let superTrain = new MegaTrain("SUPERPOEZD", 100, 100);
+train.info();
+superTrain.info();
+train.start();
+superTrain.start();
