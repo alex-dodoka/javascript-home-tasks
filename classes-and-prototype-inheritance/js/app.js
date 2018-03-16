@@ -4,45 +4,41 @@ const defaultTypeOfTransport = "This is some transport",
     arrOfModelNames = ["Reno", "Volkswagen", "Mersedes", "Mazda", "Zaporozhets"],
     arrOfPrice = [2000, 500000, 11500, 66985, 223658,];
 
-class Transport {
+let getRandomValue = function (arrOfValue) {
+    let index = Math.floor(Math.random() * arrOfValue.length);
+    let value = arrOfValue[index];
+    return value;
+};
 
-    constructor(model, cost, fuelConsumption) {
+class Transport {
+    constructor(model, cost, fuelSpent, distanceTraveled) {
         this.model = model;
         this.cost = cost;
-        this.fuelConsumption = fuelConsumption;
+        this.fuelSpent = fuelSpent;
+        this.distanceTraveled = distanceTraveled;
     }
 
     start() {
         console.log(`${this.model} was started. Wroooommmmm!`);
     }
 
-}
+    getFuelConsumption(fuelSpent, distanceTraveled) {
+        let consummption = fuelSpent / 100 * distanceTraveled;
 
-class Train extends Transport {
-
-    info() {
-        console.log(this.model);
+        return `Расход топлива составляет: ${consummption} л/км.`;
     }
-}
 
-class MegaTrain extends Train {
-
-}
-
-function getRandomValue(arrOfValue) {
-    let index = Math.floor(Math.random() * arrOfValue.length);
-    let value = arrOfValue[index];
-    return value;
 }
 
 class PassengerCar extends Transport {
 
 }
 
-let car = new PassengerCar(getRandomValue(arrOfModelNames), getRandomValue(arrOfPrice), 100);
-let train = new Train("poezd", 2000, 336);
-let superTrain = new MegaTrain("SUPERPOEZD", 100, 100);
-train.info();
-superTrain.info();
-train.start();
-superTrain.start();
+class Train extends Transport {
+
+}
+class MegaTrain extends Train {
+    doubleConsumption(fuelSpent, distanceTraveled) {
+        return super.getFuelConsumption(fuelSpent * 2, distanceTraveled);
+    }
+}
