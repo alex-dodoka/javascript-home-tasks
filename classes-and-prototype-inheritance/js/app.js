@@ -1,5 +1,6 @@
 'use strict';
-const defaultTypeOfTransport = "This is some transport",
+const
+    defaultTypeOfTransport = "This is some transport",
     defaultWeight = "Mass of transport not determined",
     arrOfModelNames = ["Reno", "Volkswagen", "Mersedes", "Mazda", "Zaporozhets"],
     arrOfPrice = [2000, 500000, 11500, 66985, 223658,];
@@ -23,22 +24,26 @@ class Transport {
     }
 
     getFuelConsumption(fuelSpent, distanceTraveled) {
-        let consummption = fuelSpent / 100 * distanceTraveled;
 
-        return `Расход топлива составляет: ${consummption} л/км.`;
+        let consummption = (fuelSpent * 100) / distanceTraveled;
+        return `Расход топлива составляет: ${consummption} л на 100 км.`;
     }
-
 }
 
 class PassengerCar extends Transport {
-
 }
 
 class Train extends Transport {
-
 }
+
 class MegaTrain extends Train {
     doubleConsumption(fuelSpent, distanceTraveled) {
         return super.getFuelConsumption(fuelSpent * 2, distanceTraveled);
     }
 }
+
+let car = new PassengerCar(getRandomValue(arrOfModelNames), getRandomValue(arrOfPrice), 1000, 3120);
+console.log(car.getFuelConsumption(825, 3300));
+
+let train = new MegaTrain(getRandomValue(arrOfModelNames), getRandomValue(arrOfPrice), 1000, 3120);
+console.log(train.doubleConsumption(825, 3300));
