@@ -34,6 +34,15 @@ class PassengerCar extends Transport {
 }
 
 class Train extends Transport {
+    constructor(model, cost, fuelSpent, distanceTraveled, conductorsName, numberOfWagons,) {
+        super(model, cost, fuelSpent, distanceTraveled);
+        this.conductorsName = conductorsName;
+        this.numberOfWagons = numberOfWagons;
+    }
+
+    getnumberOfToilets() {
+        return this.numberOfWagons * 2;
+    }
 }
 
 class MegaTrain extends Train {
@@ -45,5 +54,5 @@ class MegaTrain extends Train {
 let car = new PassengerCar(getRandomValue(arrOfModelNames), getRandomValue(arrOfPrice), 1000, 3120);
 console.log(car.getFuelConsumption(825, 3300));
 
-let train = new MegaTrain(getRandomValue(arrOfModelNames), getRandomValue(arrOfPrice), 1000, 3120);
-console.log(train.doubleConsumption(825, 3300));
+let train = new MegaTrain(getRandomValue(arrOfModelNames), getRandomValue(arrOfPrice), 1000, 3120, "Alex", 12);
+console.log(train.getnumberOfToilets());
