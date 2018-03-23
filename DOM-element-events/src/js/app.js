@@ -6,20 +6,13 @@ document.onmousedown = function (e) {
     div.style.left = `${x}px`;
     div.style.top = `${y}px`;
     let newElement = place.appendChild(div);
-   // newElement.className = "dot";  // create dot on page.
+    // newElement.className = "dot";  // create dot on page.
 };
 
 btn.oncontextmenu = function (e) {
     e.preventDefault();
     createContextWindow(e.clientX, e.clientY);
-
-    let menu = document.getElementsByClassName("context");
-    let pointOfMenu = document.createElement("p");
-    pointOfMenu.innerText = "Point 1";
-    pointOfMenu.innerText = "Point 2";
-    pointOfMenu.innerText = "Point 3";
-    menu.appendChild(pointOfMenu);
-
+    addNewPointsMenu();
 };
 
 function createContextWindow(coordX, coordY) {
@@ -31,5 +24,13 @@ function createContextWindow(coordX, coordY) {
     placeOfClick.appendChild(newElement);
 }
 
+function addNewPointsMenu() {
+    let menu = document.getElementsByClassName("context");
+    let pointOfMenu = document.createElement("p");
+    pointOfMenu.innerText = "Point 1";
+    pointOfMenu.innerText = "Point 2";
+    pointOfMenu.innerText = "Point 3";
+    menu.appendChild(pointOfMenu);
+}
 
 
