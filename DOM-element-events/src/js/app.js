@@ -28,9 +28,7 @@ function addNewPointsMenu() {
     let menu = document.getElementsByClassName("context");
     let pointOfMenu = document.createElement("p");
     pointOfMenu.innerText = "Point 1";
-    pointOfMenu.innerText = "Point 2";
-    pointOfMenu.innerText = "Point 3";
-    menu.appendChild(pointOfMenu);
+    menu[0].appendChild(pointOfMenu);
 }
 
 
