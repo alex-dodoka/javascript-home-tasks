@@ -6,29 +6,33 @@ document.onmousedown = function (e) {
     div.style.left = `${x}px`;
     div.style.top = `${y}px`;
     let newElement = place.appendChild(div);
-    // newElement.className = "dot";  // create dot on page.
+    newElement.className = "dot";  // create dot on page.
 };
 
 btn.oncontextmenu = function (e) {
     e.preventDefault();
     createContextWindow(e.clientX, e.clientY);
-    addNewPointsMenu();
+
 };
 
 function createContextWindow(coordX, coordY) {
-    let placeOfClick = document.querySelector("body");
-    let newElement = document.createElement("div");
+    let newElement = document.querySelector("div");
+    newElement.style.display = "block";
     newElement.style.left = `${coordX}px`;
     newElement.style.top = `${coordY}px`;
     newElement.className = "context";
-    placeOfClick.appendChild(newElement);
 }
 
-function addNewPointsMenu() {
-    let menu = document.getElementsByClassName("context");
-    let pointOfMenu = document.createElement("p");
-    pointOfMenu.innerText = "Point 1";
-    menu[0].appendChild(pointOfMenu);
-}
+document.onclick = function (e) {
+    e.preventDefault();
+    let target = e.srcElement.localName;
+    if (target === "html") {
+        let menu = document.getElementsByClassName("context");
+        menu[0].style.display = "none";
+    }
+    if (target === "li") {
+        alert(e.target.textContent);
+    }
+};
 
 
