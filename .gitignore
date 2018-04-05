@@ -5,8 +5,8 @@
 # IntelliJ project files
 .idea
 *.iml
-out
-gen
 /bower_components/
 /HW_preview.jpeg
 /preview_preview.png
+/node_modules
+package-lock.json

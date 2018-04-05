@@ -31,8 +31,6 @@ document.onclick = function (e) {
         menu[0].style.display = "none";
     }
     if (target === "li") {
-        alert(e.target.textContent);
+        console.log(e.target.textContent);
     }
 };
-
-
